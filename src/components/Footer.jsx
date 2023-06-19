@@ -2,7 +2,7 @@ import { Button, View, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     footer: {
-        backgroundColor: '#ffa500',
+        backgroundColor: '#606',
         paddinghorizontal: 25,
         padding: 20,
     },
@@ -12,10 +12,10 @@ const styles = StyleSheet.create({
     }
 });
 
-export default function Footer() {
+export default function Footer({navigation}) {
     return (
         <View style={styles.footer}>
-            <Button style={styles.footerButton} title="Sair"></Button>
+            <Button style={styles.footerButton} title="Sair" onPress={() => navigation.navigate('HomeScreen')}></Button>
         </View>
     );
 }

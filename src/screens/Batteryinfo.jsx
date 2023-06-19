@@ -23,12 +23,12 @@ export default function BatteryInfo() {
     }, [nivelBateria])
 
     function CorBateria(){
-        if (nivelBateria < 80) {
-            return 'yellow';
+        if (nivelBateria < 20) {
+            return 'red';
         } else if (nivelBateria < 50) {
             return 'orange';
-        } else if (nivelBateria < 20) {
-            return 'red';
+        } else if (nivelBateria < 80) {
+            return 'yellow';
         } else {
             return 'green';
         }
@@ -37,7 +37,7 @@ export default function BatteryInfo() {
   return (
     <View>
         <Header title="Nivel de Bateria" />
-        <Text>
+        <Text style={{backgroundColor: CorBateria()}}>
         {nivelBateria}%
         </Text>
             <Button 

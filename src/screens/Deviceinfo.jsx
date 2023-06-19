@@ -64,6 +64,7 @@ export default function DeviceInfo() {
       <Text style={styles.contentTextStyle}>
         A arquitetura do aparelho é: {Device.supportedCpuArchitectures}
       </Text>
+      <Footer />
     </View>
   );
 }
