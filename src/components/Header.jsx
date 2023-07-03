@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import * as Battery from "expo-battery";
 import { View, StyleSheet, Text } from "react-native";
 
 const styles = StyleSheet.create({
@@ -17,8 +19,33 @@ const styles = StyleSheet.create({
 });
 
 export default function Header({title}) {
+    
+    const [nivelBateria, setNivelBateria] = useState();
+  
+    async function bateria() {
+      const nivel = await Battery.getBatteryLevelAsync();
+      setNivelBateria(Math.round(nivel * 100));
+    }
+  
+    useEffect(()=> {
+      bateria()
+      CorBateria()
+    }, [nivelBateria])
+
+    function CorBateria(){
+        if (nivelBateria < 5) {
+            return 'black';
+        } else if (nivelBateria < 30) {
+            return 'red';
+        } else if (nivelBateria < 60) {
+            return 'orange';
+        } else {
+            return '#606';
+        }
+    }
+
     return (
-        <View style={styles.header}>
+        <View style={{backgroundColor: CorBateria()}}>
             <Text style={styles.headerTextStyle}>
                 {title}
             </Text>

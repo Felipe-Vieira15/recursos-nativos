@@ -29,6 +29,12 @@ const styles = StyleSheet.create({
   });
 
   export default function Constactsinfo({ navigation }){
+    const [contatos, setContatos] = useState([{}]);
+
+    async function carregarContatos() {
+      const { data } = await Contacts.getContactsAsync({
+        fields: [Contacts.Fields.PhoneNumbers],
+    }
 
     useEffect(() => {
         useCallback(() => {

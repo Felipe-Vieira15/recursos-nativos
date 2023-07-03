@@ -5,6 +5,7 @@ import * as Device from "expo-device";
 import * as Battery from "expo-battery";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+
 export default Notify;
 
 const styles = StyleSheet.create({

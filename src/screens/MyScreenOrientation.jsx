@@ -34,6 +34,11 @@ const styles = StyleSheet.create({
 
 export default function ScreenOrientations() {
 
+  function corDirecao() {
+    if (ScreenOrientation == 'OrientationLock.PORTRAIT'){
+      return 'red'; } else return 'green';
+  }
+
   async function padrao() {
     await ScreenOrientation.lockAsync(
     ScreenOrientation.OrientationLock.DEFAULT
@@ -66,9 +71,8 @@ export default function ScreenOrientations() {
 
   return (
     <View style={styles.container}>
-      <Header />
-        <View style={styles.content}>
-          <Text style={styles.contentTextStyle}>Orientação da tela</Text>
+      <Header title="Orientação de Tela" />
+        <View style={{backgroundColor: corDirecao()}}>
             <Button title="Padrão" onPress={padrao} />
             <Button title="Para Baixo" onPress={down} />
             <Button title="Á Direita" onPress={right} />
