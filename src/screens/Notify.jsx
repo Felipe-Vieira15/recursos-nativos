@@ -5,6 +5,7 @@ import * as Device from "expo-device";
 import * as Battery from "expo-battery";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { ScrollView } from "react-native";
 
 export default Notify;
 
@@ -13,7 +14,12 @@ const styles = StyleSheet.create({
     flex: 1,
     gap: 10,
   },
-  content: {},
+  content: {
+    flex: 1,
+    gap: 20,
+    padding: 20,
+    alignSelf: 'center',
+},
   contentTextStyle: {
     padding: 5,
     textAlignVertical: "center",
@@ -116,6 +122,20 @@ function Notify({ navigation }) {
     setExpoToken(token);
   }
 
+  async function agendarNotification() {
+    const token = await Notifications.scheduleNotificationAsync({
+      content: {
+        title: "Notificação Agendada",
+        subtitle: "Teste",
+        body: "Teste de Notificação Agendada",
+      },
+      trigger: {
+        seconds: 15,
+      },
+    });
+    setExpoToken(token);
+  }
+
   const ultimaNotificacao = Notifications.useLastNotificationResponse();
   async function exibirNotificacao() {
     alert(ultimaNotificacao.notification.request.content.body);
@@ -130,9 +150,10 @@ function Notify({ navigation }) {
       <View>
         <Header title="Notificações" />
       </View>
-      <View style={styles.content}>
+      <ScrollView>
         <Text>Expo Token: {expoToken}</Text>
-        <Button
+        <View style={styles.content}>
+          <Button
           title="Enviar Notificação"
           onPress={async () => notificarExpo()}
         />
@@ -156,7 +177,12 @@ function Notify({ navigation }) {
           title="Nivel de Bateria"
           onPress={async () => batteryNotification()}
         />
-      </View>
+        <Button
+          title="Notificação Agendada"
+          onPress={async () => agendarNotification()}
+        />
+        </View>
+      </ScrollView>
       <Footer />
     </View>
   );
