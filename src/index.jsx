@@ -8,6 +8,10 @@ import Batteryinfo from './screens/Batteryinfo';
 import Deviceinfo from './screens/Deviceinfo';
 import MyScreenOrientation from './screens/MyScreenOrientation';
 import Notify from './screens/Notify';
+import Sensors from './screens/Sensors';
+import Screen from './screens/Screen';
+import LocalAuthentication from './screens/LocalAuthentication';
+import Camerainfo from './screens/Camerainfo';
 
 const Stack = createStackNavigator();
 
@@ -20,6 +24,10 @@ export default function RootNavigation(){
                 <Stack.Screen name='Deviceinfo' component={Deviceinfo} options={{headerShown: true}} />
                 <Stack.Screen name='MyScreenOrientation' component={MyScreenOrientation} options={{headerShown: true}} />
                 <Stack.Screen name='Notify' component={Notify} options={{headerShown: true}} />
+                <Stack.Screen name='Sensors' component={Sensors} options={{headerShown: true}} />
+                <Stack.Screen name='Screen' component={Screen} options={{headerShown: true}} />
+                <Stack.Screen name='LocalAuthentication' component={LocalAuthentication} options={{headerShown: true}} />
+                <Stack.Screen name='Camerainfo' component={Camerainfo} options={{headerShown: true}} />
             </Stack.Navigator>
         </NavigationContainer>
     )

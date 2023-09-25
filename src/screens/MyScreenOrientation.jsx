@@ -57,31 +57,36 @@ export default function ScreenOrientations() {
   async function padrao() {
     await ScreenOrientation.lockAsync(
     ScreenOrientation.OrientationLock.DEFAULT
-    )
+    );
+    setCor = 'red';
   }
 
   async function down() {
     await ScreenOrientation.lockAsync(
     ScreenOrientation.OrientationLock.PORTRAIT_DOWN
-    )
+    );
+    setCor = 'red';
   }
 
   async function right() {
     await ScreenOrientation.lockAsync(
     ScreenOrientation.OrientationLock.LANDSCAPE_RIGHT
-    )
+    );
+    setCor = 'green';
   }
 
   async function left() {
     await ScreenOrientation.lockAsync(
     ScreenOrientation.OrientationLock.LANDSCAPE_LEFT
-    )
+    );
+    setCor = 'green';
   }
 
   async function other() {
     await ScreenOrientation.lockAsync(
     ScreenOrientation.OrientationLock.PORTRAIT_DOWN
-    )
+    );
+    setCor = 'red';
   }
 
   return (

@@ -9,6 +9,10 @@ export default function HomeScreen({navigation}){
             <Button title='Informações do Dispositivo' onPress={() => navigation.navigate('Deviceinfo')} />
             <Button title='Orientação de Tela' onPress={() => navigation.navigate('MyScreenOrientation')} />
             <Button title='Notificações' onPress={() => navigation.navigate('Notify')} />
+            <Button title='Sensores' onPress={() => navigation.navigate('Sensors')} />
+            <Button title='Captura de Tela' onPress={() => navigation.navigate('Screen')} />
+            <Button title='Autenticação' onPress={() => navigation.navigate('LocalAuthentication')} />
+            <Button title='Informações da Câmera' onPress={() => navigation.navigate('Camerainfo')} />
         </View>
     )
 }
