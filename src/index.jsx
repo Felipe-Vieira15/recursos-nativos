@@ -12,6 +12,7 @@ import Sensors from './screens/Sensors';
 import Screen from './screens/Screen';
 import LocalAuthentication from './screens/LocalAuthentication';
 import Camerainfo from './screens/Camerainfo';
+import Localization from './screens/Localization';
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,7 @@ export default function RootNavigation(){
                 <Stack.Screen name='Screen' component={Screen} options={{headerShown: true}} />
                 <Stack.Screen name='LocalAuthentication' component={LocalAuthentication} options={{headerShown: true}} />
                 <Stack.Screen name='Camerainfo' component={Camerainfo} options={{headerShown: true}} />
+                <Stack.Screen name='Localization' component={Localization} options={{headerShown: true}} />
             </Stack.Navigator>
         </NavigationContainer>
     )

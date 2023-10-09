@@ -13,6 +13,7 @@ export default function HomeScreen({navigation}){
             <Button title='Captura de Tela' onPress={() => navigation.navigate('Screen')} />
             <Button title='Autenticação' onPress={() => navigation.navigate('LocalAuthentication')} />
             <Button title='Informações da Câmera' onPress={() => navigation.navigate('Camerainfo')} />
+            <Button title='Localização' onPress={() => navigation.navigate('Localization')} />
         </View>
     )
 }

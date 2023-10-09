@@ -1,8 +1,7 @@
-import { View, Text, Button, ScrollView } from 'react-native';
+import { View, Text, Button, ScrollView, StyleSheet } from 'react-native';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Gyroscope, Magnetometer, Accelerometer, Barometer} from "expo-sensors";
-import { StyleSheet } from 'react-native';
 import { useEffect, useState } from 'react';
 
 const styles = StyleSheet.create({
